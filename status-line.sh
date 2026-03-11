@@ -37,7 +37,7 @@ else
         if [ "$i" -lt "$filled" ]; then bar="${bar}${COL}▰${N}"; else bar="${bar}${D}▱${N}"; fi
     done
 
-    local pct_str
+    pct_str=""
     if [ "$pct" -lt 10 ]; then pct_str=" ${pct}%"
     elif [ "$pct" -lt 100 ]; then pct_str="${pct}%"
     else pct_str="MAX"; fi

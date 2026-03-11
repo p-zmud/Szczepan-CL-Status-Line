@@ -42,6 +42,6 @@ Copies `status-line.sh` to `~/.claude/scripts/` and adds `statusLine` config to 
 ## Key constraints
 
 - Script must complete fast — Claude Code calls it frequently. API call has `--max-time 3` and 60s cache.
-- `local` keyword is used inside functions but NOT at top-level scope (bash quirk — line 40 has a stale `local` that works by accident outside function).
+- `local` keyword only inside functions, never at top-level scope.
 - Embedded Python blocks handle JSON parsing and datetime math that bash can't do cleanly.
 - `stat -f %m` is macOS-specific for checking cache file age.
