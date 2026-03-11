@@ -7,6 +7,7 @@ data=$(cat)
 model=$(echo "$data" | jq -r '.model.display_name // .model.id // "unknown"')
 max_ctx=$(echo "$data" | jq -r '.context_window.context_window_size // 200000')
 used_pct=$(echo "$data" | jq -r '.context_window.used_percentage // empty')
+cwd=$(echo "$data" | jq -r '.cwd // empty')
 
 # Colors
 B='\033[34m'    # blue
@@ -163,3 +164,4 @@ fi
 # --- Output ---
 printf '%b\n' "${model}  ${ctx_display}"
 printf '%b\n' "${limits}"
+[ -n "$cwd" ] && printf '%b\n' "${D}${cwd/#$HOME/~}${N}"
