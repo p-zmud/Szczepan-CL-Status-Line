@@ -171,5 +171,5 @@ fi
 
 # --- Output ---
 printf '%b\n' "${MODEL_COL}◆${N} ${MODEL_COL}${model}${N}  ${D}│${N}  ${ctx_display}"
-printf '%b\n' "${D}Usage${N}  ${limits}"
+printf '%b\n' "${M}Usage${N}  ${limits}"
 [ -n "$cwd" ] && printf '%b\n' "${D}${cwd/#$HOME/~}${N}"
